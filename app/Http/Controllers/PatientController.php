@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests;
 
 use App\Models\Patient;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequestPatient;
 use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
 
@@ -29,7 +31,7 @@ class PatientController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreRequestPatient $request)
     {
         
         // $request->validate([

@@ -1,7 +1,7 @@
 @extends('patient.layout') 
   
 @section('content')
-<div class="row">
+<div class="row"> 
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>Add New patient</h2>
@@ -30,46 +30,60 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>first name:</strong>
-                <input required type="text" name="first_name" class="form-control" placeholder="fisrt name">
+                <input  type="text" name="first_name" class="form-control" placeholder="first name">
             </div>
         </div>
 
        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>last name:</strong>
-                <input required type="text" name="last_name" class="form-control" placeholder="first name">
+                <input  type="text" name="last_name" class="form-control" placeholder="last name"> 
+                <!-- //value="{{old('last_name')}}"> -->
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>gender:</strong>
-                <input required type="radio" id="male" name="gender" value="M">
+                <input  type="radio" id="male" name="gender" value="M">
                 <label for="male">Male</label>
                  <input type="radio" id="female" name="gender" value="F">
                 <label for="female">Female</label>
             </div>
         </div>
 
-         <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>marital status:</strong>
-                <input required type="radio" id="single" name="marital_status" value="1">
-                <label for="single">Single</label>
-                <input required type="radio" id="married" name="marital_status" value="1">
-                <label for="married">Married</label>
-                <input required type="radio" id="divorced" name="marital_status" value="1">
-                <label for="divorced">Divorced</label>
-                <input required type="radio" id="widowed" name="marital_status" value="1">
-                <label for="widowed">Widowed</label>
+                <strong>date of birth:</strong>
+                <input  type="date" name="date_of_birth" class="form-control" placeholder="D.O.B">
             </div>
         </div>
 
+         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>marital status:</strong>
+                <input  type="radio" id="single" name="marital_status" value="1">
+                <label for="single">Single</label>
+                <input  type="radio" id="married" name="marital_status" value="1">
+                <label for="married">Married</label>
+                <input  type="radio" id="divorced" name="marital_status" value="1">
+                <label for="divorced">Divorced</label>
+                <input  type="radio" id="widowed" name="marital_status" value="1">
+                <label for="widowed">Widowed</label>
+            </div>
+        </div>
+        
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>NIN:</strong>
+                <input  type="text" name="nin" class="form-control" placeholder="NIN">
+            </div>
+        </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>phone number:</strong>
-                <input required type="text" name="phone_number" class="form-control" placeholder="contact">
+                <input  type="text" name="phone_number" class="form-control" placeholder="contact">
             </div>
         </div>
 
@@ -77,14 +91,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>next of kin:</strong>
-                <input required type="text" name="next_of_kin" class="form-control" placeholder="next of kin">
+                <input  type="text" name="next_of_kin" class="form-control" placeholder="next of kin">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>N.O.K phone number:</strong>
-                <input required type="text" name="kin_phone_number" class="form-control" placeholder="contact">
+                <input  type="text" name="kin_phone_number" class="form-control" placeholder="contact">
             </div>
         </div>
 
@@ -93,11 +107,11 @@
             <div class="form-group">
             <strong>relationship:</strong>
             <select name="relationship" id="relationship">
-                <option value="1">Father</option>
-                <option value="2">Mother</option>
-                <option value="3">Sister</option>
-                <option value="4">Brother</option>
-                <option value="5">Spouse</option>
+                <option value="1" @if(old('relationship')=='1') selected @endif>Father</option>
+                <option value="2" @if(old('relationship')=='2') selected @endif>Mother</option>
+                <option value="3" @if(old('relationship')=='3') selected @endif>Sister</option>
+                <option value="4" @if(old('relationship')=='4') selected @endif>Brother</option>
+                <option value="5" @if(old('relationship')=='5') selected @endif>Spouse</option>
              </select>
             </div>
         </div>
