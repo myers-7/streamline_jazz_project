@@ -53,3 +53,7 @@ route::get('/product/{category?}/{item?}', function($category='category section.
 
 Route::resource('patients', PatientController::class);
 
+route::get('/trans', function(){
+    return view('trans');
+});
+

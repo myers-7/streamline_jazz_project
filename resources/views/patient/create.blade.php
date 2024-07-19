@@ -30,14 +30,14 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>first name:</strong>
-                <input  type="text" name="first_name" class="form-control" placeholder="first name">
+                <input  type="text" name="first_name" class="form-control" placeholder="first name" value="{{old('first_name')}}">
             </div>
         </div>
 
        <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>last name:</strong>
-                <input  type="text" name="last_name" class="form-control" placeholder="last name"> 
+                <input  type="text" name="last_name" class="form-control" placeholder="last name" value="{{old('last_name')}}">
                 <!-- //value="{{old('last_name')}}"> -->
             </div>
         </div>
@@ -55,20 +55,20 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>date of birth:</strong>
-                <input  type="date" name="date_of_birth" class="form-control" placeholder="D.O.B">
+                <input  type="date" name="date_of_birth" class="form-control" placeholder="D.O.B" value="{{old('dat_of_birth')}}">
             </div>
         </div>
 
          <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>marital status:</strong>
-                <input  type="radio" id="single" name="marital_status" value="1">
+                <input  type="radio" id="single" name="marital_status" value="1" @if(old('single')=='1') checked @endif>
                 <label for="single">Single</label>
-                <input  type="radio" id="married" name="marital_status" value="1">
+                <input  type="radio" id="married" name="marital_status" value="2" @if(old('married')=='2') checked @endif>
                 <label for="married">Married</label>
-                <input  type="radio" id="divorced" name="marital_status" value="1">
+                <input  type="radio" id="divorced" name="marital_status" value="3" @if(old('divorced')=='3') checked @endif>
                 <label for="divorced">Divorced</label>
-                <input  type="radio" id="widowed" name="marital_status" value="1">
+                <input  type="radio" id="widowed" name="marital_status" value="3" @if(old('widowed')=='4') checked @endif>
                 <label for="widowed">Widowed</label>
             </div>
         </div>
@@ -76,29 +76,28 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>NIN:</strong>
-                <input  type="text" name="nin" class="form-control" placeholder="NIN">
+                <input  type="text" name="nin" class="form-control" placeholder="NIN" value="{{old('nin')}}">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>phone number:</strong>
-                <input  type="text" name="phone_number" class="form-control" placeholder="contact">
+                <input  type="text" name="phone_number" class="form-control" placeholder="contact" value="{{old('phone_number')}}">
             </div>
         </div>
 
-       
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>next of kin:</strong>
-                <input  type="text" name="next_of_kin" class="form-control" placeholder="next of kin">
+                <input  type="text" name="next_of_kin" class="form-control" placeholder="next of kin" value="{{old('next_of_kin')}}">
             </div>
         </div>
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>N.O.K phone number:</strong>
-                <input  type="text" name="kin_phone_number" class="form-control" placeholder="contact">
+                <input  type="text" name="kin_phone_number" class="form-control" placeholder="contact" value="{{old('kin_phone_number')}}">
             </div>
         </div>
 

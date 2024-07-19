@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreRequestPatient;
 use App\Http\Requests\StorePatientRequest;
 use App\Http\Requests\UpdatePatientRequest;
+use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
@@ -25,6 +26,7 @@ class PatientController extends Controller
      */
     public function create()
     {
+
         return view('patient.create');
     }
 
@@ -39,10 +41,22 @@ class PatientController extends Controller
         //     'detail' => 'required',
         // ]);
         // dd($request->request);
-        Patient::create($request->all());
+        // DB::insert('INSERT INTO patients (
+        // first_name,
+        // last_name,
+        // gender,
+        // nin, 
+        // date_of_birth,
+        // marital_status,
+        // phone_number,
+        // next_of_kin,
+        // kin_phone_number,
+        // relationship) VALUES (?,?,?,?,?,?,?,?,?,?)', $request->all());
          
         return redirect()->route('patients.index')
                         ->with('success','Patient created successfully.');
+
+        
     }
     
 
@@ -51,8 +65,11 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-        $patient= Patient::findOrFail($id);
-        return view('patient.show', compact('patient'));
+        // $patient= Patient::findOrFail($id);
+        // return view('patient.show', compact('patient'));
+
+        $patient = DB::select('SELECT * FROM patient WHERE id =:id', ['id' => $id])->get();
+        return view ('patient.show', compact('patient'));
     }
 
     /**

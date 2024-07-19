@@ -13,7 +13,7 @@ class Patient extends Model
         'first_name',
         'last_name',
         'gender',
-        'nin',
+        'nin', 
         'date_of_birth',
         'marital_status',
         'phone_number',

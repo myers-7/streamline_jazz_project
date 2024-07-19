@@ -22,23 +22,26 @@ class StoreRequestPatient extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name' => 'nullable',
+            'last_name' => 'nullable',
             'gender' => 'required',
-            //'date_of_birth' => 'required',
+            'phone_number' => 'required',
+            'date_of_birth' => 'required',
             'marital_status' => 'required',
             'next_of_kin' => 'required',
+            'nin' => 'nullable',
             'kin_phone_number' => 'required | max:10',
             'relationship' => 'required',
         ];
     }
     public function message(): array{
         return [
-            'first_name.required' => 'First name is required',
-            'last_name.required' => 'Last name is required',
+            // 'first_name.required' => 'First name is required',
+            // 'last_name.required' => 'Last name is required',
             'gender.required' => 'Gender is required',
+            'phone_number.required' => 'Phone number is required',
             'date_of_birth.required' => 'Date of birth is required',
-            'nin' => 'NIN number is required',
+           // 'nin' => 'NIN number is required',
            'marital_status.required' => 'Marital status is required',
            'next_of_kin.required' => 'Next of kin is required',
            'kin_phone_number.required' => 'Kin phone number is required',
