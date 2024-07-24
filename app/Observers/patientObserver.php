@@ -11,8 +11,8 @@ class patientObserver
       public function creating(Patient $patient)
     {
         if (empty($patient->title)) {
-            $patient->first_name = 'Random title if empty';
-            $patient->last_name = 'Random body if empty';
+            // $patient->first_name = 'Random title if empty';
+            // $patient->last_name = 'Random body if empty';
 
             //log message before saving
             Log::info('Creating patient '. $patient->first_name);

@@ -35,12 +35,13 @@ class PatientController extends Controller
      */
     public function store(StoreRequestPatient $request)
     {
-        
+        Patient::create($request->validated());
         // $request->validate([
         //     'name' => 'required',
         //     'detail' => 'required',
         // ]);
-        // dd($request->request);
+        //dd($request->request);
+
         // DB::insert('INSERT INTO patients (
         // first_name,
         // last_name,
@@ -51,12 +52,12 @@ class PatientController extends Controller
         // phone_number,
         // next_of_kin,
         // kin_phone_number,
-        // relationship) VALUES (?,?,?,?,?,?,?,?,?,?)', $request->all());
+        // relationship) 
+        // VALUES (?,?,?,?,?,?,?,?,?,?)', $request->all());
          
         return redirect()->route('patients.index')
                         ->with('success','Patient created successfully.');
-
-        
+                        
     }
     
 
