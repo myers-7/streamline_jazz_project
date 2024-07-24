@@ -23,7 +23,7 @@ class PatientFactory extends Factory
         $relationships = ['1', '2', '3', '4', '5'];
 
         return [
-        'first_name' => fake()->firstName(),
+            'first_name' => fake()->firstName(),
             'last_name' => fake()->lastName(),
             'gender' => fake()->randomElement($genders), // Enumeration for gender
             'nin' => fake()->text('14'), // National Identification Number

@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ArticleController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,4 +58,9 @@ Route::resource('patients', PatientController::class);
 route::get('/trans', function(){
     return view('trans');
 });
+
+Route::resource('products', ProductController::class);
+Route::resource('categories', CategoryController::class);
+Route::resource('articles', ArticleController::class);
+//Route::resource('tags', TagController::class);
 
