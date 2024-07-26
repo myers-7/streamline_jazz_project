@@ -22,29 +22,29 @@ class StoreRequestPatient extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'nullable',
-            'last_name' => 'nullable',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'gender' => 'required',
-            'phone_number' => 'required',
+            'phone_number' => 'required | max:10',
             'date_of_birth' => 'required',
-            'marital_status' => 'required',
+            'marital_status' => 'nullable',
             'next_of_kin' => 'required',
-            'nin' => 'nullable',
-            'kin_phone_number' => 'required | max:10',
+            'nin' => 'nullable | max:14',
+            'kin_phone_number' => 'nullable | max:10',
             'relationship' => 'required',
         ];
     }
     public function message(): array{
         return [
-            // 'first_name.required' => 'First name is required',
-            // 'last_name.required' => 'Last name is required',
+            'first_name.required' => 'First name is required',
+            'last_name.required' => 'Last name is required',
             'gender.required' => 'Gender is required',
-            'phone_number.required' => 'Phone number is required',
+            'phone_number.required' => 'Phone number must not be beyond 10 characters',
             'date_of_birth.required' => 'Date of birth is required',
-           // 'nin' => 'NIN number is required',
+           'nin' => 'NIN number must not be beyond 14 characters',
            'marital_status.required' => 'Marital status is required',
            'next_of_kin.required' => 'Next of kin is required',
-           'kin_phone_number.required' => 'Kin phone number is required',
+           'kin_phone_number.required' => 'Phone number must not be beyond 10 characters',
            'relationship.required' => 'Relationship is required'
         ];
     }

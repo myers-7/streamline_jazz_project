@@ -35,7 +35,11 @@ class PatientController extends Controller
      */
     public function store(StoreRequestPatient $request)
     {
-        Patient::create($request->validated());
+
+       //dd($request->all());
+       Patient::create($request->all());
+       //dd($patient);
+
         // $request->validate([
         //     'name' => 'required',
         //     'detail' => 'required',
@@ -69,7 +73,7 @@ class PatientController extends Controller
         // $patient= Patient::findOrFail($id);
         // return view('patient.show', compact('patient'));
 
-        $patient = DB::select('SELECT * FROM patient WHERE id =:id', ['id' => $id])->get();
+        $patient = DB::select('SELECT * FROM patients WHERE id =:id', ['id' => $id]);
         return view ('patient.show', compact('patient'));
     }
 
@@ -85,7 +89,7 @@ class PatientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePatientRequest $request, Patient $patient)
+    public function update(UpdateRequestPatient $request, Patient $patient)
     {
         //
     }
